@@ -1,0 +1,31 @@
+## 1、卸载docker旧版本
+yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-selinux \
+                  docker-engine-selinux \
+                  docker-engine
+
+
+## 2、安装相关工具类
+yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+  
+## 3、配置docker仓库（使用aliyun源）
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+## 4、安装docker
+yum install docker-ce
+
+## 5、启动
+systemctl start docker
+
+## 6、状态查看（默认存储devicemapper）
+Storage Driver: devicemapper
+
+
