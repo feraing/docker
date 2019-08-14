@@ -29,3 +29,11 @@ systemctl start docker
 Storage Driver: devicemapper
 
 
+## 7、查看docker可安装版本
+yum list docker-ce --showduplicates | sort -r
+
+## 8、安装指定版本
+yum install docker-ce-18.03.0.ce -y
+
+
+
